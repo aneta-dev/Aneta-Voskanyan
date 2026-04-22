@@ -6,49 +6,77 @@
 
 <title>Your Name | Portfolio</title>
 
-<!-- Google Font -->
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
-/* ===== GLOBAL STYLES ===== */
-body {
+
+/* ===== RESET ===== */
+* {
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ===== GLOBAL ===== */
+body {
     font-family: 'Inter', sans-serif;
     background: #ffffff;
-    color: #2d2d2d;
-    line-height: 1.6;
+    color: #1a1a1a;
+    scroll-behavior: smooth;
 }
 
 .container {
     width: 90%;
-    max-width: 1100px;
+    max-width: 1200px;
     margin: auto;
 }
 
 section {
-    padding: 80px 0;
+    padding: 100px 0;
+}
+
+/* ===== NAV ===== */
+nav {
+    position: sticky;
+    top: 0;
+    background: rgba(255,255,255,0.7);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid #eee;
+    z-index: 1000;
+}
+
+.nav-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+}
+
+nav a {
+    text-decoration: none;
+    color: #000;
+    margin-left: 20px;
+    font-size: 14px;
 }
 
 /* ===== HERO ===== */
 .hero {
     text-align: center;
-    padding: 120px 20px;
+    padding: 140px 20px;
 }
 
 .hero h1 {
-    font-size: 42px;
+    font-size: 48px;
     margin-bottom: 10px;
 }
 
 .hero p {
-    font-size: 18px;
-    color: #777;
+    color: #666;
     margin-bottom: 30px;
 }
 
 .btn {
-    display: inline-block;
-    padding: 12px 28px;
+    padding: 12px 30px;
     border: 1px solid #000;
     text-decoration: none;
     color: #000;
@@ -62,7 +90,7 @@ section {
 
 /* ===== ABOUT ===== */
 .about {
-    background: #f9f9f9;
+    background: #fafafa;
     text-align: center;
 }
 
@@ -72,47 +100,69 @@ section {
     color: #555;
 }
 
-/* ===== FEATURES / SKILLS ===== */
-.features {
+/* ===== SKILLS ===== */
+.skills {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
     gap: 20px;
 }
 
-.feature-box {
+.skill {
     padding: 25px;
     border: 1px solid #eee;
     transition: 0.3s;
 }
 
-.feature-box:hover {
-    transform: translateY(-5px);
+.skill:hover {
+    transform: translateY(-6px);
 }
 
-/* ===== PROJECTS ===== */
-.projects {
-    background: #f9f9f9;
+/* ===== FILTER BUTTONS (CSS ONLY) ===== */
+.filters {
+    text-align: center;
+    margin-bottom: 40px;
 }
 
-.project-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px;
+.filters input {
+    display: none;
 }
 
-.project-card {
-    border: 1px solid #eee;
-    padding: 20px;
+.filters label {
+    border: 1px solid #000;
+    padding: 8px 18px;
+    margin: 5px;
+    cursor: pointer;
     transition: 0.3s;
 }
 
-.project-card:hover {
-    transform: translateY(-5px);
+.filters label:hover {
+    background: #000;
+    color: #fff;
 }
 
-.project-card img {
+/* ===== PROJECTS ===== */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
+    gap: 20px;
+}
+
+.project {
+    border: 1px solid #eee;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.project:hover {
+    transform: scale(1.03);
+}
+
+.project img {
     width: 100%;
-    margin-bottom: 15px;
+}
+
+.project-content {
+    padding: 15px;
 }
 
 /* ===== CONTACT ===== */
@@ -120,122 +170,115 @@ section {
     text-align: center;
 }
 
-.contact a {
-    color: #000;
-    text-decoration: none;
-    border-bottom: 1px solid #000;
-}
-
 /* ===== FOOTER ===== */
 footer {
     text-align: center;
-    padding: 30px 0;
-    font-size: 14px;
-    color: #888;
+    padding: 30px;
+    color: #777;
 }
 
-/* ===== MOBILE ===== */
+/* ===== RESPONSIVE ===== */
 @media(max-width: 600px) {
     .hero h1 {
-        font-size: 30px;
+        font-size: 32px;
     }
 }
+
 </style>
 </head>
 
 <body>
 
-<!-- ===== HERO SECTION ===== -->
-<section class="hero">
-    <div class="container">
-        <h1>Your Name</h1>
-        <p>eCommerce Developer specializing in Shopify, SEO, PPC, and WordPress management</p>
-        <a href="#projects" class="btn">View My Work</a>
+<!-- ===== NAV ===== -->
+<nav>
+    <div class="container nav-inner">
+        <strong>Your Name</strong>
+        <div>
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </div>
     </div>
+</nav>
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+    <h1>eCommerce Developer</h1>
+    <p>Shopify • SEO • PPC • WordPress</p>
+    <a href="#projects" class="btn">View Work</a>
 </section>
 
-<!-- ===== ABOUT SECTION ===== -->
-<section class="about">
+<!-- ===== ABOUT ===== -->
+<section id="about" class="about">
     <div class="container">
         <h2>About Me</h2>
         <p>
-            I create modern, high-converting eCommerce websites with a focus on clean UI, performance, 
-            and user experience. My work includes Shopify development, SEO optimization, and managing 
-            full website ecosystems for brands.
+            I build modern, high-converting eCommerce websites with clean UI/UX.
+            Focused on Shopify customization, performance, and user experience.
         </p>
     </div>
 </section>
 
-<!-- ===== SKILLS / FEATURES ===== -->
+<!-- ===== SKILLS ===== -->
 <section>
     <div class="container">
         <h2>What I Do</h2>
-        <div class="features">
-            <div class="feature-box">
-                <h3>Shopify Development</h3>
-                <p>Custom themes, UI improvements, and conversion-focused design.</p>
-            </div>
-
-            <div class="feature-box">
-                <h3>SEO & PPC</h3>
-                <p>Optimizing websites for visibility and running effective ad campaigns.</p>
-            </div>
-
-            <div class="feature-box">
-                <h3>WordPress</h3>
-                <p>Managing blogs, pages, and full website structures.</p>
-            </div>
-
-            <div class="feature-box">
-                <h3>Product Management</h3>
-                <p>Organizing and improving product listings for better sales.</p>
-            </div>
+        <div class="skills">
+            <div class="skill">Shopify Development</div>
+            <div class="skill">SEO & PPC</div>
+            <div class="skill">WordPress Management</div>
+            <div class="skill">UI/UX Design</div>
         </div>
     </div>
 </section>
 
-<!-- ===== PROJECTS SECTION ===== -->
-<section class="projects" id="projects">
+<!-- ===== PROJECTS ===== -->
+<section id="projects">
     <div class="container">
-        <h2>My Projects</h2>
+        <h2>Projects</h2>
 
-        <div class="project-grid">
+        <!-- FILTERS -->
+        <div class="filters">
+            <label>All</label>
+        </div>
 
-            <!-- PROJECT 1 -->
-            <div class="project-card">
-                <img src="https://via.placeholder.com/400x250" alt="">
-                <h3>Shopify Product Page</h3>
-                <p>Redesigned product page with improved UI and conversion.</p>
+        <!-- GRID -->
+        <div class="projects-grid">
+
+            <div class="project">
+                <img src="https://via.placeholder.com/400x250">
+                <div class="project-content">
+                    <h3>Shopify Product Page</h3>
+                    <p>Improved UI and conversion rate.</p>
+                </div>
             </div>
 
-            <!-- PROJECT 2 -->
-            <div class="project-card">
-                <img src="https://via.placeholder.com/400x250" alt="">
-                <h3>Cart Bubble UI</h3>
-                <p>Custom shopping bag counter with clean UI design.</p>
+            <div class="project">
+                <img src="https://via.placeholder.com/400x250">
+                <div class="project-content">
+                    <h3>Cart Bubble</h3>
+                    <p>Custom shopping bag counter UI.</p>
+                </div>
             </div>
 
-            <!-- PROJECT 3 -->
-            <div class="project-card">
-                <img src="https://via.placeholder.com/400x250" alt="">
-                <h3>Hero Section Design</h3>
-                <p>Modern hero layout with premium feel.</p>
+            <div class="project">
+                <img src="https://via.placeholder.com/400x250">
+                <div class="project-content">
+                    <h3>Hero Section</h3>
+                    <p>Premium clean landing design.</p>
+                </div>
             </div>
 
         </div>
     </div>
 </section>
 
-<!-- ===== CONTACT SECTION ===== -->
-<section class="contact">
-    <div class="container">
-        <h2>Contact</h2>
-        <p>Email: your@email.com</p>
-        <p><a href="#">GitHub</a></p>
-    </div>
+<!-- ===== CONTACT ===== -->
+<section id="contact" class="contact">
+    <h2>Contact</h2>
+    <p>Email: your@email.com</p>
 </section>
 
-<!-- ===== FOOTER ===== -->
 <footer>
     © 2026 Your Name
 </footer>
