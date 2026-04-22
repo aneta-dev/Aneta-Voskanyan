@@ -1,1 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>Your Name | Portfolio</title>
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+/* ===== GLOBAL STYLES ===== */
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background: #ffffff;
+    color: #2d2d2d;
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: auto;
+}
+
+section {
+    padding: 80px 0;
+}
+
+/* ===== HERO ===== */
+.hero {
+    text-align: center;
+    padding: 120px 20px;
+}
+
+.hero h1 {
+    font-size: 42px;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 18px;
+    color: #777;
+    margin-bottom: 30px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 28px;
+    border: 1px solid #000;
+    text-decoration: none;
+    color: #000;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #000;
+    color: #fff;
+}
+
+/* ===== ABOUT ===== */
+.about {
+    background: #f9f9f9;
+    text-align: center;
+}
+
+.about p {
+    max-width: 700px;
+    margin: auto;
+    color: #555;
+}
+
+/* ===== FEATURES / SKILLS ===== */
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.feature-box {
+    padding: 25px;
+    border: 1px solid #eee;
+    transition: 0.3s;
+}
+
+.feature-box:hover {
+    transform: translateY(-5px);
+}
+
+/* ===== PROJECTS ===== */
+.projects {
+    background: #f9f9f9;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.project-card {
+    border: 1px solid #eee;
+    padding: 20px;
+    transition: 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+}
+
+.project-card img {
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+/* ===== CONTACT ===== */
+.contact {
+    text-align: center;
+}
+
+.contact a {
+    color: #000;
+    text-decoration: none;
+    border-bottom: 1px solid #000;
+}
+
+/* ===== FOOTER ===== */
+footer {
+    text-align: center;
+    padding: 30px 0;
+    font-size: 14px;
+    color: #888;
+}
+
+/* ===== MOBILE ===== */
+@media(max-width: 600px) {
+    .hero h1 {
+        font-size: 30px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- ===== HERO SECTION ===== -->
+<section class="hero">
+    <div class="container">
+        <h1>Your Name</h1>
+        <p>eCommerce Developer specializing in Shopify, SEO, PPC, and WordPress management</p>
+        <a href="#projects" class="btn">View My Work</a>
+    </div>
+</section>
+
+<!-- ===== ABOUT SECTION ===== -->
+<section class="about">
+    <div class="container">
+        <h2>About Me</h2>
+        <p>
+            I create modern, high-converting eCommerce websites with a focus on clean UI, performance, 
+            and user experience. My work includes Shopify development, SEO optimization, and managing 
+            full website ecosystems for brands.
+        </p>
+    </div>
+</section>
+
+<!-- ===== SKILLS / FEATURES ===== -->
+<section>
+    <div class="container">
+        <h2>What I Do</h2>
+        <div class="features">
+            <div class="feature-box">
+                <h3>Shopify Development</h3>
+                <p>Custom themes, UI improvements, and conversion-focused design.</p>
+            </div>
+
+            <div class="feature-box">
+                <h3>SEO & PPC</h3>
+                <p>Optimizing websites for visibility and running effective ad campaigns.</p>
+            </div>
+
+            <div class="feature-box">
+                <h3>WordPress</h3>
+                <p>Managing blogs, pages, and full website structures.</p>
+            </div>
+
+            <div class="feature-box">
+                <h3>Product Management</h3>
+                <p>Organizing and improving product listings for better sales.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== PROJECTS SECTION ===== -->
+<section class="projects" id="projects">
+    <div class="container">
+        <h2>My Projects</h2>
+
+        <div class="project-grid">
+
+            <!-- PROJECT 1 -->
+            <div class="project-card">
+                <img src="https://via.placeholder.com/400x250" alt="">
+                <h3>Shopify Product Page</h3>
+                <p>Redesigned product page with improved UI and conversion.</p>
+            </div>
+
+            <!-- PROJECT 2 -->
+            <div class="project-card">
+                <img src="https://via.placeholder.com/400x250" alt="">
+                <h3>Cart Bubble UI</h3>
+                <p>Custom shopping bag counter with clean UI design.</p>
+            </div>
+
+            <!-- PROJECT 3 -->
+            <div class="project-card">
+                <img src="https://via.placeholder.com/400x250" alt="">
+                <h3>Hero Section Design</h3>
+                <p>Modern hero layout with premium feel.</p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- ===== CONTACT SECTION ===== -->
+<section class="contact">
+    <div class="container">
+        <h2>Contact</h2>
+        <p>Email: your@email.com</p>
+        <p><a href="#">GitHub</a></p>
+    </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+    © 2026 Your Name
+</footer>
+
+</body>
+</html>
